@@ -4,7 +4,7 @@
   hosts: vm207
   become: yes
   become_method: sudo
-  # become_user: root
+  become_user: root
   
   tasks:
   - name: reboot machine
