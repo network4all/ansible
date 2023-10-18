@@ -3,6 +3,8 @@
   #hosts: "{{ hosts }}"
   hosts: vm207
   become: yes
+  become_user: root
+  
   tasks:
   - name: reboot machine
     reboot:
