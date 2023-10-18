@@ -1,0 +1,19 @@
+---
+- name: reboot machine
+  #hosts: "{{ hosts }}"
+  hosts: vm207
+  become: yes
+  become_user: root
+  
+  tasks:
+     - name: Reboot if required
+       shell: sleep 10 && /sbin/shutdown -r now "Rebooting for updates"
+       args:
+         removes: /var/run/reboot-required
+       async: 300
+       poll: 0
+ 
+     - name: Wait for system to come online again
+       wait_for_connection:
+         delay: 10
+         timeout: 300
