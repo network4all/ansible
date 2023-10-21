@@ -5,12 +5,12 @@
   gather_facts: false
 
   tasks:
-  - name: Add node
-  bigip_node:
-    host: 192.168.3.1
-    name: server1
-    monitors:
-      - /Common/icmp  
-  delegate_to: localhost
+    - name: Add node
+    bigip_node:
+      host: 192.168.3.1
+      name: server1
+      monitors:
+        - /Common/icmp  
+    delegate_to: localhost
   
   
