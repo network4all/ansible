@@ -1,0 +1,15 @@
+---
+- name: BIG-IP SETUP
+  hosts: f5
+  connection: local
+  gather_facts: false
+
+  - name: Add node
+  bigip_node:
+    host: 192.168.3.1
+    name: server1
+    monitors:
+      - /Common/icmp  
+  delegate_to: localhost
+  
+  
