@@ -11,6 +11,6 @@
         name: server1
         monitors:
           - /Common/icmp  
-      delegate_to: localhost
+      #delegate_to: localhost
   
   
